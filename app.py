@@ -8,11 +8,11 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     routes = '''
-    The following routes are available: \n
-    /api/v1.0/precipitation \n
-    /api/v1.0/stations \n
-    /api/v1.0/tobs \n
-    /api/v1.0/<start>/<end>
+    The following routes are available: <br/>
+    /api/v1.0/precipitation <br/>
+    /api/v1.0/stations <br/>
+    /api/v1.0/tobs <br/>
+    /api/v1.0/start_date/end_date
     '''
     return routes
 
