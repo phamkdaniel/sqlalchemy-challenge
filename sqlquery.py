@@ -41,25 +41,3 @@ def get_tobs(input_date):
 def calc_temps(start_date, end_date):
     return session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
         filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).first()
-
-# main function
-def main():
-
-    test = engine.execute("SELECT * FROM measurement ORDER BY date DESC").first()
-    print(test.date)
-    print(type(test.date))
-
-    start = "2012-02-28"
-    end = '2012-03-05'
-    x = calc_temps(start, end)
-
-    # summary = {"min" : x[0], 
-    #     "avg" : x[1], 
-    #     "max" : x[2]
-    # }
-
-    print(x)
-
-    # pprint(summary)
-
-if __name__=="__main__": main()
